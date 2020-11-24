@@ -180,7 +180,13 @@ public class Main
             b =m5.end();
             edgeName = data.substring(a,b);
 
-
+            //////////////////////////
+            UpEdgeName = edge.toUpperCase();
+            UpEdgeTargetName = edgeTarget.toUpperCase();
+            dt.println("\t"+UpEdgeName+".EdgeName = \""+edgeName+"\";\n"+
+                    "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
+                    " ");
+            //////////////////////////
 
 
             System.out.println(edge+ " " +edgeName + " " +edgeTarget);
