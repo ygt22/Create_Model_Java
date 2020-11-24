@@ -106,7 +106,8 @@ public class Main
             data = data.substring(y);
             m = p.matcher(data);
             m2 = pNN.matcher(data);
-            //m3 =pNC.matcher(data);
+            m3 =pNC.matcher(data);
+            NodeCounter++;
         }
 
         /**
@@ -290,9 +291,15 @@ public class Main
 
         }
 
+         System.out.println(NodeCounter);
+         for (int i = 0; i <NodeCounter; i++){
+             dt.println(
+                "\tNode.put(N"+i+".key, n"+i+");\n"
+             );
 
-        dt.close();
+         }
 
+         dt.close();
     }
 
 
