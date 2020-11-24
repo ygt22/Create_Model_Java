@@ -240,74 +240,54 @@ public class Main
         k= es.start();
         l =es.end();
         String edgeSName2 = data2.substring(k,l);
-        System.out.println(data2.substring(k));
-
-        // target  e0
-        et.find();
-        k = et.start();
-        l =et.end();
-        String edgeTarget2 = data2.substring(k,l);
-
-
-        String edgeName2 = null;
-
-        System.out.println("asdfghjklşkjhgfdsfghjkhvgfd");
-        System.out.println(edge2 +" "+ edgeName2 +" " + edgeSName2 +" " + edgeTarget2);
 
         //////////////////////////
-        String UpEdgeName2 = edge.toUpperCase();
-        String UpEdgeTargetName2 = edgeTarget.toUpperCase();
-        dt.println( "\tEdge "+UpEdgeName+
-                " = new Edge();"+
-                " ");
-        dt.println("\n\n\t"+UpEdgeName+".EdgeName = "+edgeName+";\n"+
-                "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
-                " ");
+        String UpEdgeTargetName2 = edge2.toUpperCase();
+        dt.println( "\t"+edgeSName2+ ".put("+ UpEdgeTargetName2 +
+                ".EdgeName," + UpEdgeTargetName2 +");"+
+                "\n");
+
         //////////////////////////
+        System.out.println(data2.substring(l));
 
-        System.out.println(edge+ " " +edgeName + " " +edgeTarget);
-        data = data.substring(b);
-        m4 = p1.matcher(data);
-        m5 = pEN.matcher(data);
-        m6 =pEC.matcher(data);
-        m7 =pET.matcher(data);
+        data2 = data2.substring(l);
 
 
+        en = p12.matcher(data2); // en e2 e5
+        esn =pEN2.matcher(data2); // kon aoff
+        ec =pEC2.matcher(data2); // edge id
+        et =pET2.matcher(data2); // target en  e5 e10
+        es =pES2.matcher(data2); // Source en  e5 e10
 
-        while(m6.find()){
-            m4.find();
-            a= m4.start();
-            b =m4.end();
-            edge = data.substring(a,b);
 
-            m7.find();
-            a = m7.start();
-            b =m7.end();
-            edgeTarget = data.substring(a,b);
+        while(ec.find()){
 
-            m5.find();
-            a = m5.start();
-            b =m5.end();
-            edgeName = data.substring(a,b);
+            en.find();
+            k= en.start();
+            l =en.end();
+             edge2 = data2.substring(k,l);
+            // source  e0
+            es.find();
+            k= es.start();
+            l =es.end();
+             edgeSName2 = data2.substring(k,l);
 
             //////////////////////////
-            UpEdgeName = edge.toUpperCase();
-            UpEdgeTargetName = edgeTarget.toUpperCase();
-            dt.println( "\tEdge "+UpEdgeName+
-                    " = new Edge();"+
-                    " ");
-            dt.println("\t"+UpEdgeName+".EdgeName = \""+edgeName+"\";\n"+
-                    "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
-                    " ");
+             UpEdgeTargetName2 = edge2.toUpperCase();
+            dt.println( "\t"+edgeSName2+ ".put("+ UpEdgeTargetName2 +
+                    ".EdgeName," + UpEdgeTargetName2 +");"+
+                    "\n");
+
             //////////////////////////
 
+            data2 = data2.substring(l);
 
-            System.out.println(edge+ " " +edgeName + " " +edgeTarget);
-            data = data.substring(b);
-            m4 = p1.matcher(data);
-            m5 = pEN.matcher(data);
-            m6 =pEC.matcher(data);
-            m7 =pET.matcher(data);
+            en = p12.matcher(data2); // en e2 e5
+            esn =pEN2.matcher(data2); // kon aoff
+            ec =pEC2.matcher(data2); // edge id
+            et =pET2.matcher(data2); // target en  e5 e10
+            es =pES2.matcher(data2); // Source en  e5 e10
+
         }
 
 
