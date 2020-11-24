@@ -109,7 +109,10 @@ public class Main
             //m3 =pNC.matcher(data);
         }
 
-
+        /**
+         * EDGE PrOCESS BEGIN
+         *
+         * **/
         // System.out.println(data);
 
         String patternEdge = "(?<=<edge id=\")(.*?)(?=\" )";
@@ -144,6 +147,13 @@ public class Main
 
         String edgeName = null;
 
+        //////////////////////////
+        String UpEdgeName = edge.toUpperCase();
+        String UpEdgeTargetName = edgeTarget.toUpperCase();
+        dt.println("\n\n\t"+UpEdgeName+".EdgeName = "+edgeName+";\n"+
+                "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
+                " ");
+        //////////////////////////
 
         System.out.println(edge+ " " +edgeName + " " +edgeTarget);
         data = data.substring(b);
