@@ -150,6 +150,9 @@ public class Main
         //////////////////////////
         String UpEdgeName = edge.toUpperCase();
         String UpEdgeTargetName = edgeTarget.toUpperCase();
+        dt.println( "\tEdge "+UpEdgeName+
+         " = new Edge();"+
+        " ");
         dt.println("\n\n\t"+UpEdgeName+".EdgeName = "+edgeName+";\n"+
                 "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
                 " ");
@@ -183,6 +186,9 @@ public class Main
             //////////////////////////
             UpEdgeName = edge.toUpperCase();
             UpEdgeTargetName = edgeTarget.toUpperCase();
+            dt.println( "\tEdge "+UpEdgeName+
+                    " = new Edge();"+
+                    " ");
             dt.println("\t"+UpEdgeName+".EdgeName = \""+edgeName+"\";\n"+
                     "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
                     " ");
