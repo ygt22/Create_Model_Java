@@ -114,6 +114,8 @@ public class Main
          *
          * **/
         // System.out.println(data);
+        String data2 = data;
+
 
         String patternEdge = "(?<=<edge id=\")(.*?)(?=\" )";
         String patternEdgeName = "(?<=\">)(.*?)(?=<y:)";
@@ -127,7 +129,7 @@ public class Main
 
         int a ;
         int b ;
-
+        // for secend it data copy to another data only from edge part
 
         Matcher m4 = p1.matcher(data);
         Matcher m5 =pEN.matcher(data);
@@ -153,6 +155,111 @@ public class Main
         dt.println( "\tEdge "+UpEdgeName+
          " = new Edge();"+
         " ");
+        dt.println("\n\n\t"+UpEdgeName+".EdgeName = "+edgeName+";\n"+
+                "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";"+
+                " ");
+        //////////////////////////
+
+        System.out.println(edge+ " " +edgeName + " " +edgeTarget);
+        data = data.substring(b);
+        m4 = p1.matcher(data);
+        m5 = pEN.matcher(data);
+        m6 =pEC.matcher(data);
+        m7 =pET.matcher(data);
+
+
+
+        while(m6.find()){
+            m4.find();
+            a= m4.start();
+            b =m4.end();
+            edge = data.substring(a,b);
+
+            m7.find();
+            a = m7.start();
+            b =m7.end();
+            edgeTarget = data.substring(a,b);
+
+            m5.find();
+            a = m5.start();
+            b =m5.end();
+            edgeName = data.substring(a,b);
+
+            //////////////////////////
+            UpEdgeName = edge.toUpperCase();
+            UpEdgeTargetName = edgeTarget.toUpperCase();
+            dt.println( "\tEdge "+UpEdgeName+
+                    " = new Edge();"+
+                    " ");
+            dt.println("\t"+UpEdgeName+".EdgeName = \""+edgeName+"\";\n"+
+                    "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
+                    " ");
+            //////////////////////////
+
+
+            System.out.println(edge+ " " +edgeName + " " +edgeTarget);
+            data = data.substring(b);
+            m4 = p1.matcher(data);
+            m5 = pEN.matcher(data);
+            m6 =pEC.matcher(data);
+            m7 =pET.matcher(data);
+        }
+
+         ////////////////////////////////////////
+        ////////////////////////////////////////
+        ////////////////////////////////////////
+
+        String Edgep = "(?<=<edge id=\")(.*?)(?=\" )";
+        String EdgeNamep = "(?<=\">)(.*?)(?=<y:)";
+        String EdgeTargetp = "(?<=target=\")(.*?)(?=\">)";
+        String EdgeSourcep = "(?<=\" source=\")(.*?)(?=\" target=\")";
+        String EdgeControlp = "edge id";
+
+        Pattern p12= Pattern.compile(Edgep);
+        Pattern pEN2 = Pattern.compile(EdgeNamep);
+        Pattern pET2= Pattern.compile(EdgeTargetp);
+        Pattern pES2= Pattern.compile(EdgeSourcep);
+        Pattern pEC2= Pattern.compile(EdgeControlp);
+
+        int k ;
+        int l ;
+        // for secend it data copy to another data only from edge part
+
+        Matcher en = p12.matcher(data2); // en e2 e5
+        Matcher esn =pEN2.matcher(data2); // kon aoff
+        Matcher ec =pEC2.matcher(data2); // edge id
+        Matcher et =pET2.matcher(data2); // target en  e5 e10
+        Matcher es =pES2.matcher(data2); // Source en  e5 e10
+       // finding e0
+        en.find();
+        k= en.start();
+        l =en.end();
+        String edge2 = data2.substring(k,l);
+        // source  e0
+        es.find();
+        k= es.start();
+        l =es.end();
+        String edgeSName2 = data2.substring(k,l);
+        System.out.println(data2.substring(k));
+
+        // target  e0
+        et.find();
+        k = et.start();
+        l =et.end();
+        String edgeTarget2 = data2.substring(k,l);
+
+
+        String edgeName2 = null;
+
+        System.out.println("asdfghjklşkjhgfdsfghjkhvgfd");
+        System.out.println(edge2 +" "+ edgeName2 +" " + edgeSName2 +" " + edgeTarget2);
+
+        //////////////////////////
+        String UpEdgeName2 = edge.toUpperCase();
+        String UpEdgeTargetName2 = edgeTarget.toUpperCase();
+        dt.println( "\tEdge "+UpEdgeName+
+                " = new Edge();"+
+                " ");
         dt.println("\n\n\t"+UpEdgeName+".EdgeName = "+edgeName+";\n"+
                 "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
                 " ");
@@ -202,10 +309,6 @@ public class Main
             m6 =pEC.matcher(data);
             m7 =pET.matcher(data);
         }
-
-////////////////////////////////////////
-        // Maapp puttig Begin
-
 
 
         dt.close();
