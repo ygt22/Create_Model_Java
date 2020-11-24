@@ -35,6 +35,9 @@ public class Main
         dt.println("public class Main {\n\n\t" +
                 "public static void main(String[] args) {\n\t");
 
+        dt.println("\n\tHashMap<Integer, HashMap<String,Edge>> Node ="+
+                " new HashMap<Integer,HashMap<String,Edge>>();"+
+               "\n" );
 
         // dt.close();
     }
@@ -87,6 +90,10 @@ public class Main
             y =m2.end();
             String nodeName = data.substring(x,y);
 
+            //////////////////////////
+            dt.println("\tHashMap<String,Edge> "+node+
+                    " = new HashMap<>();"+
+                    " ");
             //////////////////////////
             String str = node.toUpperCase();
             dt.println("\tVertex "+str+" = new Vertex();");
