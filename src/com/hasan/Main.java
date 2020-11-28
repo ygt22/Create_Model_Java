@@ -18,7 +18,7 @@ public class Main
     public static void firstInit(PrintWriter dt){
         dt.println("package com.hasan;");
         dt.println("\nimport java.util.HashMap;\n");
-
+        /*
         dt.println("class Vertex  // It identifies any vertex node in the model" +
                 "\n{" +
                 "\npublic String VertexName; // vertex  name : koff_loff_aoff" +
@@ -32,12 +32,16 @@ public class Main
                 "\npublic Vertex Target; // to this vertex N1" +
                 "\n\n};" +
                 "\n\n");
-        dt.println("public class Main {\n\n\t" +
-                "public static void main(String[] args) {\n\t");
+                */
+        dt.println("public class model {\n\t" +
+                " ");
 
-        dt.println("\n\tHashMap<Integer, HashMap<String,Edge>> Node ="+
+        dt.println("\n\tstatic HashMap<Integer, HashMap<String,Edge>> Node ="+
                 " new HashMap<Integer,HashMap<String,Edge>>();"+
                "\n" );
+        dt.println("\n\tstatic void setMethod(){ "+
+                "\n"
+                     );
 
         // dt.close();
     }
@@ -102,7 +106,7 @@ public class Main
             //////////////////////////
 
 
-            System.out.println(node+ " " +nodeName);
+           // System.out.println(node+ " " +nodeName);
             data = data.substring(y);
             m = p.matcher(data);
             m2 = pNN.matcher(data);
@@ -161,7 +165,7 @@ public class Main
                 " ");
         //////////////////////////
 
-        System.out.println(edge+ " " +edgeName + " " +edgeTarget);
+        //System.out.println(edge+ " " +edgeName + " " +edgeTarget);
         data = data.substring(b);
         m4 = p1.matcher(data);
         m5 = pEN.matcher(data);
@@ -198,7 +202,7 @@ public class Main
             //////////////////////////
 
 
-            System.out.println(edge+ " " +edgeName + " " +edgeTarget);
+            //System.out.println(edge+ " " +edgeName + " " +edgeTarget);
             data = data.substring(b);
             m4 = p1.matcher(data);
             m5 = pEN.matcher(data);
@@ -249,7 +253,7 @@ public class Main
                 "\n");
 
         //////////////////////////
-        System.out.println(data2.substring(l));
+       // System.out.println(data2.substring(l));
 
         data2 = data2.substring(l);
 
@@ -291,13 +295,21 @@ public class Main
 
         }
 
-         System.out.println(NodeCounter);
+        // System.out.println(NodeCounter);
          for (int i = 0; i <NodeCounter; i++){
              dt.println(
                 "\tNode.put(N"+i+".key, n"+i+");\n"
              );
 
          }
+
+         dt.println("}");
+         dt.println("\tstatic HashMap<Integer, HashMap<String, Edge>> getnode(){"+
+                 "\n\treturn Node;"+
+                 "\n}"
+         );
+         dt.println("\n}");
+
 
          dt.close();
     }

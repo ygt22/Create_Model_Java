@@ -1,0 +1,73 @@
+// Maapp puttig Begin
+                Matcher m4 = p1.matcher(data);
+                Matcher m5 =pEN.matcher(data);
+                Matcher m6 =pEC.matcher(data);
+                Matcher m7 =pET.matcher(data);
+                m4.find();
+                a= m4.start();
+                b =m4.end();
+                edge = data.substring(a,b);
+
+                m7.find();
+                a = m7.start();
+                b =m7.end();
+                edgeTarget = data.substring(a,b);
+
+
+                edgeName = null;
+
+                //////////////////////////
+                UpEdgeName = edge.toUpperCase();
+                UpEdgeTargetName = edgeTarget.toUpperCase();
+                dt.println( "\tEdge "+UpEdgeName+
+                " = new Edge();"+
+                " ");
+                dt.println("\n\n\t"+UpEdgeName+".EdgeName = "+edgeName+";\n"+
+                "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
+                " ");
+                //////////////////////////
+
+                System.out.println(edge+ " " +edgeName + " " +edgeTarget);
+                data = data.substring(b);
+                m4 = p1.matcher(data);
+                m5 = pEN.matcher(data);
+                m6 =pEC.matcher(data);
+                m7 =pET.matcher(data);
+
+
+
+                while(m6.find()){
+                m4.find();
+                a= m4.start();
+                b =m4.end();
+                edge = data.substring(a,b);
+
+                m7.find();
+                a = m7.start();
+                b =m7.end();
+                edgeTarget = data.substring(a,b);
+
+                m5.find();
+                a = m5.start();
+                b =m5.end();
+                edgeName = data.substring(a,b);
+
+                //////////////////////////
+                UpEdgeName = edge.toUpperCase();
+                UpEdgeTargetName = edgeTarget.toUpperCase();
+                dt.println( "\tEdge "+UpEdgeName+
+                " = new Edge();"+
+                " ");
+                dt.println("\t"+UpEdgeName+".EdgeName = \""+edgeName+"\";\n"+
+                "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";\n"+
+                " ");
+                //////////////////////////
+
+
+                System.out.println(edge+ " " +edgeName + " " +edgeTarget);
+                data = data.substring(b);
+                m4 = p1.matcher(data);
+                m5 = pEN.matcher(data);
+                m6 =pEC.matcher(data);
+                m7 =pET.matcher(data);
+                }
