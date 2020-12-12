@@ -38,10 +38,10 @@ public class Main
 
         dt.println("\n\tstatic HashMap<Integer, HashMap<String,Edge>> Node ="+
                 " new HashMap<Integer,HashMap<String,Edge>>();"+
-               "\n" );
+                "\n" );
         dt.println("\n\tstatic void setMethod(){ "+
                 "\n"
-                     );
+        );
 
         // dt.close();
     }
@@ -106,7 +106,7 @@ public class Main
             //////////////////////////
 
 
-           // System.out.println(node+ " " +nodeName);
+            // System.out.println(node+ " " +nodeName);
             data = data.substring(y);
             m = p.matcher(data);
             m2 = pNN.matcher(data);
@@ -158,8 +158,8 @@ public class Main
         String UpEdgeName = edge.toUpperCase();
         String UpEdgeTargetName = edgeTarget.toUpperCase();
         dt.println( "\tEdge "+UpEdgeName+
-         " = new Edge();"+
-        " ");
+                " = new Edge();"+
+                " ");
         dt.println("\n\n\t"+UpEdgeName+".EdgeName = "+edgeName+";\n"+
                 "\t"+UpEdgeName+".Target = "+UpEdgeTargetName+";"+
                 " ");
@@ -210,7 +210,7 @@ public class Main
             m7 =pET.matcher(data);
         }
 
-         ////////////////////////////////////////
+        ////////////////////////////////////////
         ////////////////////////////////////////
         ////////////////////////////////////////
 
@@ -235,7 +235,7 @@ public class Main
         Matcher ec =pEC2.matcher(data2); // edge id
         Matcher et =pET2.matcher(data2); // target en  e5 e10
         Matcher es =pES2.matcher(data2); // Source en  e5 e10
-       // finding e0
+        // finding e0
         en.find();
         k= en.start();
         l =en.end();
@@ -253,7 +253,7 @@ public class Main
                 "\n");
 
         //////////////////////////
-       // System.out.println(data2.substring(l));
+        // System.out.println(data2.substring(l));
 
         data2 = data2.substring(l);
 
@@ -270,15 +270,15 @@ public class Main
             en.find();
             k= en.start();
             l =en.end();
-             edge2 = data2.substring(k,l);
+            edge2 = data2.substring(k,l);
             // source  e0
             es.find();
             k= es.start();
             l =es.end();
-             edgeSName2 = data2.substring(k,l);
+            edgeSName2 = data2.substring(k,l);
 
             //////////////////////////
-             UpEdgeTargetName2 = edge2.toUpperCase();
+            UpEdgeTargetName2 = edge2.toUpperCase();
             dt.println( "\t"+edgeSName2+ ".put("+ UpEdgeTargetName2 +
                     ".EdgeName," + UpEdgeTargetName2 +");"+
                     "\n");
@@ -296,22 +296,22 @@ public class Main
         }
 
         // System.out.println(NodeCounter);
-         for (int i = 0; i <NodeCounter; i++){
-             dt.println(
-                "\tNode.put(N"+i+".key, n"+i+");\n"
-             );
+        for (int i = 0; i <NodeCounter; i++){
+            dt.println(
+                    "\tNode.put(N"+i+".key, n"+i+");\n"
+            );
 
-         }
+        }
 
-         dt.println("}");
-         dt.println("\tstatic HashMap<Integer, HashMap<String, Edge>> getnode(){"+
-                 "\n\treturn Node;"+
-                 "\n}"
-         );
-         dt.println("\n}");
+        dt.println("}");
+        dt.println("\tstatic HashMap<Integer, HashMap<String, Edge>> getnode(){"+
+                "\n\treturn Node;"+
+                "\n}"
+        );
+        dt.println("\n}");
 
 
-         dt.close();
+        dt.close();
     }
 
 
